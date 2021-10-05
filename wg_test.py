@@ -42,8 +42,6 @@ for clusters in server_data["hosts"]:
     remote_host = server_data["hosts"][clusters]["host"]
     out_git = loc_start("ssh", "{}@{} {} && {}".format(remote_uname, remote_host, command_dir, command_git))
     out_svn = loc_start("ssh", "{}@{} {} && {}".format(remote_uname, remote_host, command_dir, command_subversion))
-    # print(out)
-    # print("ssh", "{}@{} {} && {}".format(remote_uname, remote_host, command_dir, command_git))
     rev_info_git = {"rev_git": out_git[1]}
 
     if "error" or " not found" in rev_info_git["rev_git"]:
